@@ -1,0 +1,36 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+.sidebar {
+    background-color: #1e1e29;
+    width: 10vh;
+    height: 100vh;
+    color: #9a9cab;
+}
+
+.home {
+    background-color: #181821;
+    width: 100%;
+}
+
+.sidebar_heading {
+    /* background-color: red; */
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sibebar_main {
+    /* background-color: red; */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.main {
+    padding-top: 50px;
+}
