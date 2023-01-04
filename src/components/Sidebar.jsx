@@ -2,6 +2,8 @@ import React from "react";
 import "../css/style.css";
 import user from "../assets/images/user.png";
 import setting from "../assets/images/settings.png"
+import projects from "../assets/images/projects.png"
+import theme from "../assets/images/theme.png"
 
 function Sidebar() {
   return (
@@ -14,10 +16,10 @@ function Sidebar() {
           <img src={user} height="17" className="blackImg" />
         </div>
         <div className="main">
-          <img src={user} height="15" className="blackImg" />
+          <img src={projects} height="17" className="blackImg" />
         </div>
         <div className="main">
-          <img src={user} height="15" className="blackImg" />
+          <img src={theme} height="20" className="blackImg" />
         </div>
         <div className="main">
           <img src={setting} height="20" className="blackImg" />
