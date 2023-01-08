@@ -5,7 +5,8 @@ import location from "../assets/images/location.png";
 import email from "../assets/images/email.png";
 import contact from "../assets/images/contact.png";
 import user from "../assets/images/user.png";
-import logo from "../assets/images/harsh.jpeg";
+import HomeProfile_mobile from "./HomeProfile_mobile";
+import ProjectContainer from "./ProjectContainer";
 
 function Home() {
   return (
@@ -53,40 +54,23 @@ function Home() {
             </div>
           </div>
           {/* mobile view */}
-          <div className="home_inner_mobile">
-            <div className="home_inner_mobile_profile">
-              <div>
-                <img src={logo} height="60" className="home_mobile_profile" />
-              </div>
-              <div className="home_heading mt-6">Harsh Said</div>
-              <div className="description mt-6">MERN stack developer</div>
-              <div className="profile_tags_mobile">
-                <span className="tags">Backend Devloper</span>
-                <span className="tags">React JS</span>
-                <span className="tags">Node JS</span>
-                <span className="tags mt-10">Mongo DB</span>
-              </div>
-              <div className="contact_container">
-                <div className="contact_mobile">
-                  {" "}
-                  <span style={{ paddingRight: "5px" }}>
-                    <img src={location} height="15" />
-                  </span>{" "}
-                  Solapur, India
+          <HomeProfile_mobile />
+          <div className="project_container">
+            <div className="project_heading">Projects</div>
+            <div class="project_grid">
+              <div class="row row-cols-sm-2 ">
+                <div class="col">
+                  <ProjectContainer/>
                 </div>
-                <div className="contact_mobile">
-                  <span style={{ paddingRight: "7px" }}>
-                    <img src={email} height="15" />
-                  </span>{" "}
-                  harshsaid558@gmail.com
+                <div class="col">
+                  <ProjectContainer/>
                 </div>
-                <div className="contact_mobile">
-                  <span style={{ paddingRight: "5px" }}>
-                    <img src={contact} height="15" />
-                  </span>{" "}
-                  8788388573
+                <div class="col">
+                  <ProjectContainer/>
                 </div>
+                
               </div>
+              
             </div>
           </div>
         </div>

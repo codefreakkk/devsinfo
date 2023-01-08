@@ -1,7 +1,6 @@
 import React from "react";
 import code from "../assets/images/code.png";
 import logout from "../assets/images/exit.png";
-
 function Navbar() {
 
   // toggle navbar
