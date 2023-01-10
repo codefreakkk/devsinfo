@@ -7,6 +7,7 @@ import contact from "../assets/images/contact.png";
 import user from "../assets/images/user.png";
 import HomeProfile_mobile from "./HomeProfile_mobile";
 import ProjectContainer from "./ProjectContainer";
+import Resume from "./Resume";
 
 function Home() {
   return (
@@ -58,7 +59,7 @@ function Home() {
           <div className="project_container">
             <div className="project_heading">Projects</div>
             <div class="project_grid">
-              <div class="row row-cols-sm-2 ">
+              <div class="row row-cols-sm-2">
                 <div class="col">
                   <ProjectContainer/>
                 </div>
@@ -68,11 +69,13 @@ function Home() {
                 <div class="col">
                   <ProjectContainer/>
                 </div>
-                
+                <div class="col">
+                  <ProjectContainer/>
+                </div>
               </div>
-              
             </div>
           </div>
+          <Resume/>
         </div>
       </div>
     </>

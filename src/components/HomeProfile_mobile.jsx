@@ -15,9 +15,9 @@ function HomeProfile_mobile() {
               <div className="home_heading mt-6">Harsh Said</div>
               <div className="description mt-6">MERN stack developer</div>
               <div className="profile_tags_mobile">
-                <span className="tags">Backend Devloper</span>
-                <span className="tags">React JS</span>
-                <span className="tags">Node JS</span>
+                <span className="tags mt-10">Backend Devloper</span>
+                <span className="tags mt-10">React JS</span>
+                <span className="tags mt-10">Node JS</span>
                 <span className="tags mt-10">Mongo DB</span>
               </div>
               <div className="contact_container">

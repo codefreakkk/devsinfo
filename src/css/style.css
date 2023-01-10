@@ -97,7 +97,7 @@
 
 .home_inner {
     background-color: #1e1e29;
-    width: 75%;
+    width: 55%;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -230,6 +230,10 @@
     margin-top: 10px;
 }
 
+.ml-8 {
+    margin-left: 8px;
+}
+
 .project_container {
     /* border: 1px solid red; */
     width: 55%;
@@ -306,6 +310,48 @@
     cursor: pointer;
 }
 
+.resume_container {
+    /* border: 1px solid red; */
+    margin-top: 35px;
+    width: 55%;
+}
+
+.resume_title {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.resume_inner_container {
+    display: flex;
+    background-color: #1e1e29;
+    /* padding: px 0; */
+    height: 125px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.resume_name {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.socials_inner_container {
+    display: flex;
+    background-color: #1e1e29;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 850px) {
     .home {
         padding: 0;
@@ -337,6 +383,7 @@
         display: block;
     }
     .home_inner_mobile {
+        margin-top: 20px;
         display: flex;
         background-color: #1e1e29;
         width: 85%;
@@ -376,6 +423,22 @@
     }
     .project_container {
         width: 85%;
+    }
+    .tags {
+        /* background-color: white; */
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.096);
+        border-radius: 50px;
+        padding: 5px 15px;
+        font-size: 10px;
+        /* width: 120px; */
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        letter-spacing: 1px;
+        margin-right: 10px;
     }
 }
 
@@ -450,5 +513,27 @@
     }
     .project_container {
         width: 85%;
+    }
+    .tags {
+        /* background-color: white; */
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.096);
+        border-radius: 50px;
+        padding: 5px 15px;
+        font-size: 10px;
+        /* width: 120px; */
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        letter-spacing: 1px;
+        margin-right: 10px;
+    }
+    .resume_container {
+            width: 85%;
+    }
+    .resume_inner_container{
+        width: 100%;
     }
 }
