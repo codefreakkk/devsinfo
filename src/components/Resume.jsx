@@ -1,7 +1,7 @@
 import React from "react";
 import cv from "../assets/images/cv.png";
 import linkedin from "../assets/images/linkedin.png";
-import github from "../assets/images/github.png"
+import github from "../assets/images/github.png";
 
 function Resume() {
   return (
@@ -20,10 +20,14 @@ function Resume() {
           <div class="col">
             <div className="resume_title">Socials</div>
             <div className="socials_inner_container">
-                <div>
-                    <span><img src={linkedin} height="45" /></span>
-                    <span><img src={github} className="ml-8" height="45" /></span>
-                </div>
+              <div>
+                <span>
+                  <img src={linkedin} height="45" />
+                </span>
+                <span>
+                  <img src={github} className="ml-8" height="45" />
+                </span>
+              </div>
             </div>
           </div>
         </div>

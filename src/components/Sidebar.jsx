@@ -1,17 +1,20 @@
 import React from "react";
 import "../css/style.css";
 import user from "../assets/images/user.png";
-import setting from "../assets/images/settings.png"
-import projects from "../assets/images/projects.png"
-import theme from "../assets/images/theme.png"
+import setting from "../assets/images/settings.png";
+import projects from "../assets/images/projects.png";
+import theme from "../assets/images/theme.png";
 import exit from "../assets/images/logout.png";
+import { NavLink, Link } from "react-router-dom";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <div className="sidebar_heading">
-        <span className="sheading">D</span>
-      </div>
+        <div className="sidebar_heading">
+      <NavLink to={"/"} style={{textDecoration: "none", color: "#83d8ae"}}>
+          <span className="sheading">D</span>
+      </NavLink>
+        </div>
       <div className="sibebar_main">
         <div className="main">
           <img src={user} height="17" className="blackImg" />

@@ -4,10 +4,11 @@ import Navbar from "./Navbar";
 import location from "../assets/images/location.png";
 import email from "../assets/images/email.png";
 import contact from "../assets/images/contact.png";
-import user from "../assets/images/user.png";
 import HomeProfile_mobile from "./HomeProfile_mobile";
 import ProjectContainer from "./ProjectContainer";
 import Resume from "./Resume";
+import Codingprofile from "./Codingprofile";
+import logo from "../assets/images/harsh.jpeg";
 
 function Home() {
   return (
@@ -50,7 +51,7 @@ function Home() {
             </div>
             <div className="home_inner_right">
               <div className="profile">
-                <img src={user} className="profile_main" alt="" />
+                <img src={logo} className="profile_main" alt="" />
               </div>
             </div>
           </div>
@@ -61,21 +62,22 @@ function Home() {
             <div class="project_grid">
               <div class="row row-cols-sm-2">
                 <div class="col">
-                  <ProjectContainer/>
+                  <ProjectContainer />
                 </div>
                 <div class="col">
-                  <ProjectContainer/>
+                  <ProjectContainer />
                 </div>
                 <div class="col">
-                  <ProjectContainer/>
+                  <ProjectContainer />
                 </div>
                 <div class="col">
-                  <ProjectContainer/>
+                  <ProjectContainer />
                 </div>
               </div>
             </div>
           </div>
-          <Resume/>
+          <Resume />
+          <Codingprofile />
         </div>
       </div>
     </>
