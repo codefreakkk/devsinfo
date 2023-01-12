@@ -10,18 +10,23 @@ import { NavLink, Link } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="sidebar">
-        <div className="sidebar_heading">
-      <NavLink to={"/"} style={{textDecoration: "none", color: "#83d8ae"}}>
+      <div className="sidebar_heading">
+        <NavLink to="/" style={{ textDecoration: "none", color: "#83d8ae" }}>
           <span className="sheading">D</span>
-      </NavLink>
-        </div>
+        </NavLink>
+      </div>
       <div className="sibebar_main">
-        <div className="main">
-          <img src={user} height="17" className="blackImg" />
-        </div>
-        <div className="main">
-          <img src={projects} height="17" className="blackImg" />
-        </div>
+        <NavLink to="/">
+          <div className="main">
+            <img src={user} height="17" className="blackImg" />
+          </div>
+        </NavLink>
+
+        <NavLink to="/projects">
+          <div className="main">
+            <img src={projects} height="17" className="blackImg" />
+          </div>
+        </NavLink>
         <div className="main">
           <img src={theme} height="20" className="blackImg" />
         </div>

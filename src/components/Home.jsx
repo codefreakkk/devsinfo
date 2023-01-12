@@ -9,6 +9,7 @@ import ProjectContainer from "./ProjectContainer";
 import Resume from "./Resume";
 import Codingprofile from "./Codingprofile";
 import logo from "../assets/images/harsh.jpeg";
+import ProjectsComponent from "./ProjectsComponent";
 
 function Home() {
   return (
@@ -57,25 +58,7 @@ function Home() {
           </div>
           {/* mobile view */}
           <HomeProfile_mobile />
-          <div className="project_container">
-            <div className="project_heading">Projects</div>
-            <div class="project_grid">
-              <div class="row row-cols-sm-2">
-                <div class="col">
-                  <ProjectContainer />
-                </div>
-                <div class="col">
-                  <ProjectContainer />
-                </div>
-                <div class="col">
-                  <ProjectContainer />
-                </div>
-                <div class="col">
-                  <ProjectContainer />
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProjectsComponent/>
           <Resume />
           <Codingprofile />
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
+import Projects from "./components/Projects";
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
       <div style={{ display: "flex" }}>
         <BrowserRouter>
           <Sidebar />
+          <Routes>
+            <Route path="/projects" element={<Projects/>} />
+          </Routes>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
