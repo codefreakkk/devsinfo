@@ -5,11 +5,11 @@ import location from "../assets/images/location.png";
 import email from "../assets/images/email.png";
 import contact from "../assets/images/contact.png";
 import HomeProfile_mobile from "./HomeProfile_mobile";
-import ProjectContainer from "./ProjectContainer";
 import Resume from "./Resume";
 import Codingprofile from "./Codingprofile";
 import logo from "../assets/images/harsh.jpeg";
 import ProjectsComponent from "./ProjectsComponent";
+import Contact from "./Contact";
 
 function Home() {
   return (
@@ -58,9 +58,11 @@ function Home() {
           </div>
           {/* mobile view */}
           <HomeProfile_mobile />
+
           <ProjectsComponent/>
           <Resume />
           <Codingprofile />
+          <Contact/>
         </div>
       </div>
     </>

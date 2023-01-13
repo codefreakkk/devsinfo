@@ -5,7 +5,7 @@ import setting from "../assets/images/settings.png";
 import projects from "../assets/images/projects.png";
 import theme from "../assets/images/theme.png";
 import exit from "../assets/images/logout.png";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -30,9 +30,11 @@ function Sidebar() {
         <div className="main">
           <img src={theme} height="20" className="blackImg" />
         </div>
+        <NavLink to="/settings">
         <div className="main">
           <img src={setting} height="20" className="blackImg" />
         </div>
+        </NavLink>
         <div className="main exit">
           <img src={exit} height="25" className="blackImg" />
         </div>

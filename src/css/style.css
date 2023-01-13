@@ -255,6 +255,12 @@
     margin-top: 20px;
 }
 
+.c_heading {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
 .project_grid {
     /* background-color: red; */
 }
@@ -415,6 +421,11 @@
     
 }
 
+.c_inner {
+    width: 55%;
+    margin-top: 20px;
+}
+
 
 #project_name {
     background-color:#181821;
@@ -434,6 +445,52 @@
     letter-spacing: .5px;
     height: 150px;
     margin-bottom: 20px;
+}
+
+/* Settings section */
+
+.settings_container {
+    width: 55%;
+    /* border: 1px solid red; */
+    margin: 40px auto
+}
+
+.show {
+    border-radius: 2px;
+    border: .1px solid rgba(255, 255, 255, 0.343);
+    background-color:#181821;
+    color: rgb(205, 205, 205);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+.profile_count {
+    background-color: #1e1e29;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    border-radius: 5px;
+}
+
+.count {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+}
+
+.views {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    margin-top: -5px;
+}
+
+.setting_inner {
+    /* background-color: red; */
+    display: flex;
+    /* flex-wrap: n; */
 }
 
 @media only screen and (max-width: 850px) {
@@ -536,6 +593,27 @@
         padding: 10px 40px;
         
     } 
+    .c_inner {
+        width: 85%;
+        margin-top: 20px;
+    }
+    .setting_inner {
+        flex-direction: column;
+        width: 100%;
+    }
+    .settings_container {
+        width: 90%;
+    }
+    .profile_count {
+        background-color: #1e1e29;
+        width: 93%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
 }
 
 @media only screen and (max-width: 420px) {
@@ -653,4 +731,25 @@
         padding: 10px 40px;
         
     } 
+    .c_inner {
+        width: 85%;
+        margin-top: 20px;
+    }
+    .setting_inner {
+        flex-direction: column;
+        width: 100%;
+    }
+    .settings_container {
+        width: 90%;
+    }
+    .profile_count {
+        background-color: #1e1e29;
+        width: 93%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
 }

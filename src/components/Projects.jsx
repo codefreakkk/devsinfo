@@ -10,59 +10,80 @@ function Projects() {
         <Navbar />
         <div className="p_inner">
           <div className="mb-4 p_heading">Set up Profile</div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Your Name
-            </label>
-            <input type="email" class="form-control" id="project_name" />
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Email
-            </label>
-            <input type="email" class="form-control" id="project_name" />
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Contact Number
-            </label>
-            <input type="email" class="form-control" id="project_name" />
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Address
-            </label>
-            <input type="email" class="form-control" id="project_name" />
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  Your Name
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  Email
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
           </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Skill 1
-            </label>
-            <input type="email" class="form-control" id="project_name" />
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  Contact Number
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  State
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
           </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Skill 2
-            </label>
-            <input type="email" class="form-control" id="project_name" />
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  Skill 1
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  Skill 2
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
           </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Skill 3
-            </label>
-            <input type="email" class="form-control" id="project_name" />
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label white">
-              Skill 4
-            </label>
-            <input type="email" class="form-control" id="project_name" />
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  Skill 3
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label white">
+                  Skill 4
+                </label>
+                <input type="email" class="form-control" id="project_name" />
+              </div>
+            </div>
           </div>
 
           <label for="exampleInputEmail1" class="form-label white">
