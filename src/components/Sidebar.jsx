@@ -22,7 +22,7 @@ function Sidebar() {
           </div>
         </NavLink>
 
-        <NavLink to="/projects">
+        <NavLink to="/editprofile">
           <div className="main">
             <img src={projects} height="17" className="blackImg" />
           </div>

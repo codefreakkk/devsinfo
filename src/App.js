@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Projects from "./components/Projects";
+import Editprofile from "./components/Editprofile";
 import Settings from "./components/Settings";
 import Sidebar from "./components/Sidebar";
 
@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
           <Sidebar />
           <Routes>
-            <Route path="/projects" element={<Projects/>} />
+            <Route path="/editprofile" element={<Editprofile/>} />
           </Routes>
           <Routes>
             <Route path="/settings" element={<Settings/>} />

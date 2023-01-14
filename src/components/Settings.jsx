@@ -1,6 +1,10 @@
 import React from "react";
 import Navbar from "./Navbar";
 import "../css/style.css";
+import resume from "../assets/images/uploadresume.png";
+import user from "../assets/images/uploaduser.png";
+import ProjectSettingComponent from "./ProjectSettingComponent";
+import ProjectSettings from "./ProjectSettings";
 
 function Settings() {
   return (
@@ -8,10 +12,19 @@ function Settings() {
       <div className="home">
         <Navbar />
         <div className="settings_container">
-          <div className="mb-4 p_heading">Porfolio Settings</div>
+          <div className="mb-2 mt-5 p_heading">Porfolio Settings</div>
           <div>
+            <div className="upload_photos">
+              <div className="center">
+                <div className="profile_img">
+                  <img src={user} height="35" />
+                </div>
+                <div className="profile_title">Upload Photo</div>
+              </div>
+            </div>
+
             <div className="setting_inner">
-              <div class="col" style={{ marginRight: "25px" }}>
+              <div class="col p_settings">
                 <div>
                   <div class="input-group mb-3">
                     <div class="input-group-text show">
@@ -79,6 +92,27 @@ function Settings() {
               </div>
             </div>
           </div>
+
+          {/* resume  */}
+          <div className="mb-3 mt-4 p_heading">
+            Upload Resume
+            <div className="mt-1 upload">Not uploaded</div>
+          </div>
+          <div className="upload_resume">
+            <div className="center column">
+              <img src={resume} height="50" />
+              <span className="mt-2 fff">Upload Resume</span>
+            </div>
+          </div>
+          
+          {/* Project settings */}
+          <ProjectSettings/>
+
+          {/* Contact Info */}
+          <div className="mb-3 mt-4 p_heading">
+            Contact Information
+          </div>
+          <button className="btn btn-primary">View</button>
         </div>
       </div>
     </>

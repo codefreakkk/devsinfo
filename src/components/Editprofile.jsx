@@ -101,6 +101,68 @@ function Projects() {
             Save
           </button>
 
+          {/* Profile links */}
+          <div className="mt-5 mb-4 p_heading">Profile Links</div>
+          <div className="profile_link_container">
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label white">
+                    Linked In
+                  </label>
+                  <input type="email" class="form-control" id="project_name" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label white">
+                    Github
+                  </label>
+                  <input type="email" class="form-control" id="project_name" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label white">
+                    Leetcode
+                  </label>
+                  <input type="email" class="form-control" id="project_name" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label white">
+                    GeeksForGeeks
+                  </label>
+                  <input type="email" class="form-control" id="project_name" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="" class="form-label white">
+                    Codforces
+                  </label>
+                  <input type="email" class="form-control" id="project_name" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label white">
+                    Codechef
+                  </label>
+                  <input type="email" class="form-control" id="project_name" />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+            Save
+          </button>
+          </div>
+
           {/* Project Details */}
           <div className="mb-4 mt-5 p_heading">Project Details</div>
           <div class="mb-3">
