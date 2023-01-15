@@ -5,6 +5,7 @@ import resume from "../assets/images/uploadresume.png";
 import user from "../assets/images/uploaduser.png";
 import ProjectSettingComponent from "./ProjectSettingComponent";
 import ProjectSettings from "./ProjectSettings";
+import { NavLink } from "react-router-dom";
 
 function Settings() {
   return (
@@ -104,15 +105,15 @@ function Settings() {
               <span className="mt-2 fff">Upload Resume</span>
             </div>
           </div>
-          
+
           {/* Project settings */}
-          <ProjectSettings/>
+          <ProjectSettings />
 
           {/* Contact Info */}
-          <div className="mb-3 mt-4 p_heading">
-            Contact Information
-          </div>
-          <button className="btn btn-primary">View</button>
+          <div className="mb-3 mt-4 p_heading">Contact Information</div>
+          <NavLink to="/contact">
+            <button className="btn btn-primary">View</button>
+          </NavLink>
         </div>
       </div>
     </>

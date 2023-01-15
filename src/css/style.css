@@ -580,6 +580,20 @@
     font-size: 13px;
 }
 
+.contain_container {
+    /* background-color: red; */
+    /* padding-top: 10px; */
+    width: 55%;
+    margin: 30px auto;
+}
+
+/* themes section */
+.themes_container {
+    margin: 0 auto;
+    width: 75%;
+    /* background-color: red; */
+}
+
 @media only screen and (max-width: 850px) {
     .home {
         padding: 0;
@@ -718,6 +732,12 @@
     .ps_inner {
         /* background-color: red; */
         width: 100%;
+    }
+    .contain_container {
+        width: 90%;
+    }
+    .themes_container {
+        width: 90%;
     }
 }
 
@@ -874,5 +894,11 @@
     .ps_inner {
         /* background-color: red; */
         width: 100%;
+    }
+    .contain_container {
+        width: 90%;
+    }
+    .themes_container {
+        width: 90%;
     }
 }

@@ -27,13 +27,15 @@ function Sidebar() {
             <img src={projects} height="17" className="blackImg" />
           </div>
         </NavLink>
-        <div className="main">
-          <img src={theme} height="20" className="blackImg" />
-        </div>
+        <NavLink to="/themes">
+          <div className="main">
+            <img src={theme} height="20" className="blackImg" />
+          </div>
+        </NavLink>
         <NavLink to="/settings">
-        <div className="main">
-          <img src={setting} height="20" className="blackImg" />
-        </div>
+          <div className="main">
+            <img src={setting} height="20" className="blackImg" />
+          </div>
         </NavLink>
         <div className="main exit">
           <img src={exit} height="25" className="blackImg" />

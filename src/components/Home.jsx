@@ -56,9 +56,9 @@ function Home() {
               </div>
             </div>
           </div>
-          {/* mobile view */}
+          {/* mobile view start */}
           <HomeProfile_mobile />
-
+          {/* mobile view end */}
           <ProjectsComponent/>
           <Resume />
           <Codingprofile />
