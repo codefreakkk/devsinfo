@@ -6,10 +6,13 @@ import Settings from "./components/Settings";
 import Sidebar from "./components/Sidebar";
 import ContactPage from "./components/ContactPage";
 import Themes from "./components/Themes";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
     <>
+      <Provider store={store}>
       <div style={{ display: "flex" }}>
         <BrowserRouter>
           <Sidebar />
@@ -30,6 +33,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
+      </Provider>
     </>
   );
 }

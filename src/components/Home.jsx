@@ -11,6 +11,7 @@ import logo from "../assets/images/harsh.jpeg";
 import ProjectsComponent from "./ProjectsComponent";
 import Contact from "./Contact";
 
+
 function Home() {
   return (
     <>
