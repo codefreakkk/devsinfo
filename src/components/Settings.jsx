@@ -38,8 +38,10 @@ function Settings() {
                     </div>
                     <input
                       type="text"
+                      id="setting1"
                       class="form-control show"
                       value="Show coding profile"
+                      disabled="true"
                     />
                   </div>
                 </div>
@@ -54,8 +56,10 @@ function Settings() {
                     </div>
                     <input
                       type="text"
+                      id="setting2"
                       class="form-control show"
                       value="Show Contact Information"
+                      disabled="true"
                     />
                   </div>
                 </div>
@@ -71,6 +75,8 @@ function Settings() {
                     <input
                       type="text"
                       class="form-control show"
+                      id="setting3"
+                      disabled="true"
                       value="Show Projects"
                     />
                   </div>

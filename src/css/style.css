@@ -466,6 +466,21 @@
     font-size: 13px;
 }
 
+#setting1 {
+    background-color:#181821;
+    color: white;
+}
+
+#setting2 {
+    background-color:#181821;
+    color: white;
+}
+
+#setting3 {
+    background-color:#181821;
+    color: white;
+}
+
 .profile_count {
     background-color: #1e1e29;
     width: 50%;
