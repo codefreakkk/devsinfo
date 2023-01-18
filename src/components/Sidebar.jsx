@@ -49,7 +49,7 @@ function Sidebar() {
               <img src={setting} height="20" className="blackImg" />
             </div>
           </NavLink>
-          <div className="main exit">
+          <div className="main ">
             <img src={exit} height="25" className="blackImg" onClick={() => dispatch(open())} />
           </div>
         </div>
