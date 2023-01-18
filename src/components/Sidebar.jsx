@@ -4,7 +4,7 @@ import user from "../assets/images/user.png";
 import setting from "../assets/images/settings.png";
 import projects from "../assets/images/projects.png";
 import theme from "../assets/images/theme.png";
-import exit from "../assets/images/logout.png";
+import exit from "../assets/images/close.png";
 import { NavLink } from "react-router-dom";
 import { useSelector , useDispatch} from "react-redux";
 import {open} from "../actions/sidebarActions"
