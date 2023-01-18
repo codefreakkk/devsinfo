@@ -53,6 +53,7 @@ function Settings() {
                         type="checkbox"
                         value=""
                       />
+                      
                     </div>
                     <input
                       type="text"
