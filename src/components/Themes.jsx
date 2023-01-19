@@ -2,10 +2,12 @@ import React from "react";
 import Navbar from "./Navbar";
 import "../css/style.css";
 import ThemesComponent from "./ThemesComponent";
+import Sidebar from "./Sidebar";
 
 function Themes() {
   return (
     <>
+      <Sidebar/>
       <div className="home">
         <Navbar />
         <div className="themes_container">
@@ -14,7 +16,6 @@ function Themes() {
             <div class="col">
               <ThemesComponent/>
             </div>
-
           </div>
         </div>
       </div>

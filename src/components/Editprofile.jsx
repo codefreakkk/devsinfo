@@ -2,10 +2,12 @@ import React from "react";
 import Navbar from "./Navbar";
 import "../css/style.css";
 import ProjectsComponent from "./ProjectsComponent";
+import Sidebar from "./Sidebar";
 
 function Projects() {
   return (
     <>
+      <Sidebar/>
       <div className="home">
         <Navbar />
         <div className="p_inner">

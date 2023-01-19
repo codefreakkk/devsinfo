@@ -6,10 +6,12 @@ import user from "../assets/images/uploaduser.png";
 import ProjectSettingComponent from "./ProjectSettingComponent";
 import ProjectSettings from "./ProjectSettings";
 import { NavLink } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 function Settings() {
   return (
     <>
+    <Sidebar/>  
       <div className="home">
         <Navbar />
         <div className="settings_container">

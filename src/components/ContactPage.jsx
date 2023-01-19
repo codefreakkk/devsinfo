@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./Navbar";
 import "../css/style.css";
-import ProjectContainer from "./ProjectContainer"
 import ContactComponent from "./ContactComponent";
+import Sidebar from "./Sidebar";
 
 function ContactPage() {
   return (
     <>
+      <Sidebar/>
       <div className="home">
         <Navbar />
         

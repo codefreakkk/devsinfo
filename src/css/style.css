@@ -44,6 +44,10 @@
     align-items: center;
 }
 
+.close_sidebar {
+    display: none;
+}
+
 .main {
     padding-top: 50px;
 }
@@ -774,6 +778,9 @@
     .themes_container {
         width: 90%;
     }
+    .close_sidebar {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 420px) {
@@ -936,5 +943,8 @@
     }
     .themes_container {
         width: 90%;
+    }
+    .close_sidebar {
+        display: block;
     }
 }

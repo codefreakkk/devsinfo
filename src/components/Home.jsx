@@ -10,11 +10,13 @@ import Codingprofile from "./Codingprofile";
 import logo from "../assets/images/harsh.jpeg";
 import ProjectsComponent from "./ProjectsComponent";
 import Contact from "./Contact";
+import Sidebar from "./Sidebar";
 
 
 function Home() {
   return (
     <>
+      <Sidebar/>
       <div className="home">
         <Navbar />
         <div className="home_container">
