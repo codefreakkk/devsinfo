@@ -61,7 +61,6 @@
 }
 
 .navbar_inner {
-    /* background-color: red; */
     height: 8vh;
     width: 90%;
     display: flex;
@@ -192,6 +191,7 @@
 }
 
 .navbar_heading_mobile {
+    display: none;
     margin-right: 10px;
     /* display: none; */
 }
