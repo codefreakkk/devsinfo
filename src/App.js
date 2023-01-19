@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Userdashboard from "./components/Userdashboard";
 import LandingPage from "./components/landingpage/LandingPage";
+import Login from "./components/landingpage/Login";
+import Signup from "./components/landingpage/Signup";
 
 function App() {
   return (
@@ -12,6 +14,12 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<LandingPage />} />
+            </Routes>
+            <Routes>
+              <Route path="/login" element={<Login/>} />
+            </Routes>
+            <Routes>
+              <Route path="/signup" element={<Signup />} />
             </Routes>
             <Userdashboard/>
           </BrowserRouter>

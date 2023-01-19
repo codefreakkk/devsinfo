@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import dev from "../../assets/images/hexagon.png";
 
 function LandingNavbar() {
@@ -11,9 +12,16 @@ function LandingNavbar() {
         Dev's
       </div>
       <div className="l_body">
-        <span className="mr font-13">Home</span>
-        <span className="mr font-13">login</span>
-        <span className="font-13">signup</span>
+        <NavLink to="/" style={{ textDecoration: "none" }}>
+          <span className="mr font-13">Home</span>
+        </NavLink>
+
+        <NavLink to="/login" style={{ textDecoration: "none" }}>
+          <span className="mr font-13">login</span>
+        </NavLink>
+        <NavLink to="/signup" style={{ textDecoration: "none" }}>
+          <span className="font-13">signup</span>
+        </NavLink>
       </div>
     </div>
   );

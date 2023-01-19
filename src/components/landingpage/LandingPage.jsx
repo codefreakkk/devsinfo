@@ -7,9 +7,8 @@ function LandingPage() {
     <>
       <LandingNavbar />
       <div className="landing_container">
-        <div className="l_heading">devsinfo
-        </div>
-          <span className="l_button">Create your Profile</span>
+        <div className="l_heading">dev's info</div>
+        <span className="l_button">Create your Profile</span>
       </div>
     </>
   );
