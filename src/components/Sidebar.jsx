@@ -6,22 +6,16 @@ import projects from "../assets/images/projects.png";
 import theme from "../assets/images/theme.png";
 import exit from "../assets/images/close.png";
 import { NavLink } from "react-router-dom";
-import { useSelector , useDispatch} from "react-redux";
-import {open} from "../actions/sidebarActions"
+import { useSelector, useDispatch } from "react-redux";
+import { open } from "../actions/sidebarActions";
 
 function Sidebar() {
   const sidebarState = useSelector((state) => state.toggleSidebar);
   const dispatch = useDispatch();
 
   return (
-    <div
-      className={sidebarState == true ? "sidebar open" : "close"}
-    >
-      <div
-        className={
-          sidebarState == true ? "dblock" : "dnone"
-        }
-      >
+    <div className={sidebarState == true ? "sidebar open" : "close"}>
+      <div className={sidebarState == true ? "dblock" : "dnone"}>
         <div className="sidebar_heading">
           <NavLink to="/" style={{ textDecoration: "none", color: "#83d8ae" }}>
             <span className="sheading">D</span>
@@ -50,7 +44,12 @@ function Sidebar() {
             </div>
           </NavLink>
           <div className="main close_sidebar">
-            <img src={exit} height="25" className="blackImg" onClick={() => dispatch(open())} />
+            <img
+              src={exit}
+              height="25"
+              className="blackImg"
+              onClick={() => dispatch(open())}
+            />
           </div>
         </div>
       </div>

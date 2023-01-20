@@ -18,9 +18,8 @@ function LandingPage() {
           <span style={{ fontWeight: "500" }}>Continue w/ Google</span>
         </span>
         <div className="or">or</div>
-        <NavLink to="/signup" style={{textDecoration: "none"}}>
-
-        <div className="sign_email">Signup w/ Email</div>
+        <NavLink to="/signup" style={{ textDecoration: "none" }}>
+          <div className="sign_email">Signup w/ Email</div>
         </NavLink>
       </div>
     </>
