@@ -35,11 +35,19 @@ function Login() {
                 />
               </div>
               <div class="mb-5">
-                <label class="form-check-label" for="exampleCheck1">
-                  Forget password
+                <label
+                  class="form-check-label"
+                  for="exampleCheck1"
+                  style={{ fontSize: "14px", cursor: "pointer" }}
+                >
+                  Forget password ?
                 </label>
               </div>
-              <button type="submit" class="btn btn-dark" style={{ width: "100%" }}>
+              <button
+                type="submit"
+                class="btn btn-dark"
+                style={{ width: "100%" }}
+              >
                 LOGIN
               </button>
             </form>

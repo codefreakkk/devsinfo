@@ -9,7 +9,10 @@ function LandingNavbar() {
         <span>
           <img src={dev} height="40" style={{ marginRight: "5px" }} />
         </span>
+        <NavLink style={{textDecoration : "none", color: "black"}} to="/">
+
         Dev's
+        </NavLink>
       </div>
       <div className="l_body">
         <NavLink to="/" style={{ textDecoration: "none" }}>
