@@ -196,7 +196,7 @@
 }
 
 .navbar_heading_mobile {
-    display: none;
+    /* display: none; */
     margin-right: 10px;
     /* display: none; */
 }
@@ -781,6 +781,8 @@
     }
     .close_sidebar {
         display: block;
+        position: fixed;
+        bottom:25px;
     }
 }
 
@@ -947,5 +949,7 @@
     }
     .close_sidebar {
         display: block;
+        position: fixed;
+        bottom:25px;
     }
 }

@@ -3,3 +3,9 @@ export const open = () => {
         type: "TOGGLE"
     }
 }
+
+export const close = () => {
+    return {
+        type: "CLOSE"
+    }
+}
