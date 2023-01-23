@@ -1,8 +1,36 @@
-import React from 'react'
-import LandingNavbar from './LandingNavbar'
-import google from "../../assets/images/google.png"
+import axios from "axios";
+import {React, useState} from "react";
+import LandingNavbar from "./LandingNavbar";
+import {useNavigate} from "react-router-dom"
 
 function Signup() {
+  const navigate = useNavigate();
+  const [u_email, setEmail] = useState("");
+  const [u_password, setPassword] = useState("");
+  const [c_password, setCPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // do validation of fields later
+
+    if (u_password != c_password) {
+      alert("password not match");
+      return;
+    }
+
+    axios.post("http://localhost:8000/api/v1/signup", {u_email, u_password})
+    .then((response) => {
+      if (response.data.success == true) {
+        navigate("/login");
+      }
+      else alert(response.data.message);
+    })
+    .catch((err) => {
+      alert("Some error occured");
+      console.log(err)
+    })
+  }
+
   return (
     <>
       <LandingNavbar />
@@ -12,20 +40,15 @@ function Signup() {
           <div className="login_inner">
             <form>
               <div class="mb-4">
-              <button type="button" class="btn btn-outline-secondary" style={{width: "100%"}}>
-                <span style={{marginRight: "10px"}}><img src={google} alt="" height="22" /></span>
-                Continue with Google</button>
-              
-                <div className='marginauto'>or</div>
-
                 <label for="exampleInputEmail1" class="form-label">
                   Email address
                 </label>
                 <input
                   type="email"
                   class="form-control"
+                  placeholder="example@gmail.com"
                   id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
@@ -37,8 +60,10 @@ function Signup() {
                 </label>
                 <input
                   type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter you password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  id=""
                 />
               </div>
               <div class="mb-5">
@@ -48,21 +73,26 @@ function Signup() {
                 <input
                   type="password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  onChange={(e) => setCPassword(e.target.value)}
+                  placeholder="Confirm your password"
+                  id=""
                 />
               </div>
-              
 
-              <button type="submit" class="btn btn-dark" style={{ width: "100%" }}>
+              <button
+                onClick={handleSubmit}
+                type="submit"
+                class="btn btn-dark"
+                style={{ width: "100%" }}
+              >
                 LOGIN
               </button>
             </form>
           </div>
         </div>
       </div>
-
     </>
-  )
+  );
 }
 
-export default Signup
+export default Signup;

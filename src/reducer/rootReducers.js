@@ -1,8 +1,10 @@
-import toggleSidebar from "./sidebarReducer";
 import {combineReducers} from "redux";
+import toggleSidebar from "./sidebarReducer";
+import isLoggedIn from "./loginReducer";
 
 const rootReducers = combineReducers({
-    toggleSidebar
+    toggleSidebar,
+    isLoggedIn,
 })
 
 export default rootReducers;

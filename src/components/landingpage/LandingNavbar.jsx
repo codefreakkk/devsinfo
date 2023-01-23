@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import dev from "../../assets/images/hexagon.png";
 
@@ -9,9 +9,8 @@ function LandingNavbar() {
         <span>
           <img src={dev} height="40" style={{ marginRight: "5px" }} />
         </span>
-        <NavLink style={{textDecoration : "none", color: "black"}} to="/">
-
-        Dev's
+        <NavLink style={{ textDecoration: "none", color: "black" }} to="/">
+          Dev's
         </NavLink>
       </div>
       <div className="l_body">

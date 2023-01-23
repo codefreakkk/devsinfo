@@ -4,6 +4,7 @@ export const open = () => {
     }
 }
 
+
 export const close = () => {
     return {
         type: "CLOSE"
