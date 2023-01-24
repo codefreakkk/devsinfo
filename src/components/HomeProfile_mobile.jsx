@@ -12,7 +12,9 @@ function HomeProfile_mobile() {
               <div>
                 <img src={logo} height="60" className="home_mobile_profile" />
               </div>
-              <div className="home_heading mt-6">Harsh Said</div>
+              <div className="home_heading mt-6">Harsh Said
+              <span className="edit_profile">Edit Profile</span>
+              </div>
               <div className="description mt-6">MERN stack developer</div>
               <div className="profile_tags_mobile">
                 <span className="tags mt-10">Backend Devloper</span>

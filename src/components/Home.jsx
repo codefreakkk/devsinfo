@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect} from "react";
 import "../css/style.css";
 import Navbar from "./Navbar";
 import location from "../assets/images/location.png";
@@ -11,9 +11,23 @@ import logo from "../assets/images/harsh.jpeg";
 import ProjectsComponent from "./ProjectsComponent";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
+import axios from "axios";
 
 
 function Home() {
+  useEffect(() => {
+    console.log(localStorage.getItem("token"));
+    axios.get("http://localhost:8000/api/v1/userdetails", {
+      headers: {
+        "Authorization": localStorage.getItem("token"),
+      }
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <Sidebar/>
@@ -23,7 +37,9 @@ function Home() {
           {/* home_inner desktop view */}
           <div className="home_inner">
             <div className="home_inner_left">
-              <div className="home_heading">Harsh said</div>
+              <div className="home_heading">Harsh said
+                <span className="edit_profile">Edit Profile</span>
+              </div>
               <div className="description">Mern Stack developer</div>
               <div className="profile_tags">
                 <span className="tags">Backend Devloper</span>

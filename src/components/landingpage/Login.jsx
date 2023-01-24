@@ -1,7 +1,32 @@
-import React from "react";
+import axios from "axios";
+import {React, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import LandingNavbar from "./LandingNavbar";
 
 function Login() {
+  const navigate = useNavigate();
+  const [u_email, setEmail] = useState("");
+  const [u_password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      // do validation later
+
+      axios.post("http://localhost:8000/api/v1/login", {u_email, u_password})
+      .then((response) => {
+        if (response.data.success == true) {
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("u_email", response.data.u_email);
+          navigate("/dashboard");
+        }
+        else {
+          alert(response.data.message);
+        }
+      })
+      .catch((err) => console.log(err));
+
+  }
+
   return (
     <>
       <LandingNavbar />
@@ -17,8 +42,8 @@ function Login() {
                 <input
                   type="email"
                   class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
+                  placeholder="example@gmail.com"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
@@ -31,7 +56,8 @@ function Login() {
                 <input
                   type="password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  placeholder="Enter your password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div class="mb-5">
@@ -47,6 +73,7 @@ function Login() {
                 type="submit"
                 class="btn btn-dark"
                 style={{ width: "100%" }}
+                onClick={handleSubmit}
               >
                 LOGIN
               </button>

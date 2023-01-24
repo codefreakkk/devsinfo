@@ -633,6 +633,37 @@
     display: block;
 }
 
+.edit_profile{
+    font-size: 12px;
+    padding: 2px 12px;
+    font-weight: 200;
+    font-weight: 300;
+    border: 1px solid rgba(255, 255, 255, 0.247);
+    margin-left: 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_heading {
+    display: flex;
+    align-items: center;
+}
+
+.dnone {
+    display: none;
+}
+
+.edit_profile_title {
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 850px) {
     .home {
         padding: 0;
@@ -783,6 +814,10 @@
         display: block;
         position: fixed;
         bottom:25px;
+    }
+    .home_heading {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
@@ -951,5 +986,9 @@
         display: block;
         position: fixed;
         bottom:25px;
+    }
+    .home_heading {
+        display: flex;
+        justify-content: space-between;
     }
 }
