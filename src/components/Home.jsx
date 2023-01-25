@@ -16,7 +16,6 @@ import axios from "axios";
 
 function Home() {
   useEffect(() => {
-    console.log(localStorage.getItem("token"));
     axios.get("http://localhost:8000/api/v1/userdetails", {
       headers: {
         "Authorization": localStorage.getItem("token"),

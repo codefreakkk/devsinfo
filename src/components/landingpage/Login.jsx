@@ -23,7 +23,7 @@ function Login() {
           alert(response.data.message);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Some error occured"));
 
   }
 
