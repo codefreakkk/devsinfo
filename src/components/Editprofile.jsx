@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/style.css";
 import Sidebar from "./Sidebar";
 import axios from "axios";
+import { Oval } from "react-loader-spinner";
 
 function Projects() {
   const [u_name, setUname] = useState("");
@@ -24,8 +25,8 @@ function Projects() {
   const [project_name, setProjectName] = useState("");
   const [project_link, setProjectLink] = useState("");
   const [project_description, setProjectDescription] = useState("");
-  const [msg, setMsg] = useState("");
-  const [state, setMState] = useState(false);
+  const [profileMsg, setProfileMsg] = useState("");
+  const [profileState, setProfileState] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,7 +51,32 @@ function Projects() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/v1/codinglinksdetails", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        if (res.data.success === true) {
+          const data = res.data.data;
+          setLinkedIn(data.linked_in);
+          setGithub(data.github);
+          setLeetcode(data.leetcode);
+          setGFG(data.gfg);
+          setCodeforces(data.codeforces);
+          setCodechef(data.codechef);
+        }
+      })
+      .catch((err) => {
+        localStorage.clear();
+        navigate("/");
+      });
+  }, []);
+
   const handleProfile = () => {
+    setProfileState(true);
     axios
       .post(
         "http://localhost:8000/api/v1/setprofile",
@@ -73,13 +99,38 @@ function Projects() {
       )
       .then((response) => {
         if (response.data.status === true) {
-          setMsg(response.data.message);
-          setMState(true);
-        } else setMsg(setMsg(response.data.message));
+          setProfileMsg(response.data.message);
+          setProfileState(false);
+          console.log(profileMsg);
+        } else setProfileMsg(response.data.message);
       })
       .catch((err) => {
         localStorage.clear();
         navigate("/");
+      });
+  };
+
+  const handleProfileLinks = () => {
+    axios
+      .post(
+        "http://localhost:8000/api/v1/codinglinks",
+        {
+          linked_in,
+          github,
+          leetcode,
+          gfg,
+          codeforces,
+          codechef,
+        },
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => console.log(res.data.message))
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -90,13 +141,6 @@ function Projects() {
         <Navbar />
         <div className="p_inner">
           <div className="mb-4 p_heading">Set up Profile</div>
-
-          {state && (
-            <div class="alert alert-light mb-5" role="alert">
-              {msg}
-            </div>
-          )}
-
           <div class="row">
             <div class="col">
               <div class="mb-3">
@@ -128,7 +172,6 @@ function Projects() {
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col">
               <div class="mb-3">
@@ -159,7 +202,6 @@ function Projects() {
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col">
               <div class="mb-3">
@@ -190,7 +232,6 @@ function Projects() {
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col">
               <div class="mb-3">
@@ -221,7 +262,6 @@ function Projects() {
               </div>
             </div>
           </div>
-
           <label for="exampleInputEmail1" class="form-label white">
             Short Description
           </label>
@@ -236,9 +276,30 @@ function Projects() {
             />
           </div>
           <button type="button" class="btn btn-primary" onClick={handleProfile}>
-            Save
-          </button>
-
+            {profileState === false ? (
+              <span>Save</span>
+            ) : (
+              <span>
+                <Oval
+                  height={20}
+                  width={20}
+                  color="white"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="white"
+                  strokeWidth={3}
+                  strokeWidthSecondary={5}
+                />
+              </span>
+            )}
+          </button>{" "}
+          <span
+            style={{ fontSize: "12px", color: "#83d8ae", marginLeft: "15px" }}
+          >
+            {profileMsg}
+          </span>
           {/* Profile links */}
           <div className="mt-5 mb-4 p_heading">Profile Links</div>
           <div className="profile_link_container">
@@ -248,7 +309,13 @@ function Projects() {
                   <label for="" class="form-label white">
                     Linked In
                   </label>
-                  <input type="text" class="form-control" id="project_name" />
+                  <input
+                    type="text"
+                    value={linked_in}
+                    onChange={(e) => setLinkedIn(e.target.value)}
+                    class="form-control"
+                    id="project_name"
+                  />
                 </div>
               </div>
               <div class="col">
@@ -256,7 +323,13 @@ function Projects() {
                   <label for="exampleInputEmail1" class="form-label white">
                     Github
                   </label>
-                  <input type="text" class="form-control" id="project_name" />
+                  <input
+                    type="text"
+                    value={github}
+                    onChange={(e) => setGithub(e.target.value)}
+                    class="form-control"
+                    id="project_name"
+                  />
                 </div>
               </div>
             </div>
@@ -266,7 +339,13 @@ function Projects() {
                   <label for="" class="form-label white">
                     Leetcode
                   </label>
-                  <input type="text" class="form-control" id="project_name" />
+                  <input
+                    type="text"
+                    value={leetcode}
+                    onChange={(e) => setLeetcode(e.target.value)}
+                    class="form-control"
+                    id="project_name"
+                  />
                 </div>
               </div>
               <div class="col">
@@ -274,7 +353,13 @@ function Projects() {
                   <label for="exampleInputEmail1" class="form-label white">
                     GeeksForGeeks
                   </label>
-                  <input type="text" class="form-control" id="project_name" />
+                  <input
+                    type="text"
+                    value={gfg}
+                    onChange={(e) => setGFG(e.target.value)}
+                    class="form-control"
+                    id="project_name"
+                  />
                 </div>
               </div>
             </div>
@@ -284,7 +369,13 @@ function Projects() {
                   <label for="" class="form-label white">
                     Codforces
                   </label>
-                  <input type="text" class="form-control" id="project_name" />
+                  <input
+                    type="text"
+                    value={codeforces}
+                    onChange={(e) => setCodeforces(e.target.value)}
+                    class="form-control"
+                    id="project_name"
+                  />
                 </div>
               </div>
               <div class="col">
@@ -292,30 +383,50 @@ function Projects() {
                   <label for="exampleInputEmail1" class="form-label white">
                     Codechef
                   </label>
-                  <input type="text" class="form-control" id="project_name" />
+                  <input
+                    type="text"
+                    value={codechef}
+                    onChange={(e) => setCodechef(e.target.value)}
+                    class="form-control"
+                    id="project_name"
+                  />
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              onClick={handleProfileLinks}
+            >
               Save
             </button>
           </div>
-
           {/* Project Details */}
           <div className="mb-4 mt-5 p_heading">Project Details</div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label white">
               Project Name
             </label>
-            <input type="text" class="form-control" id="project_name" />
+            <input
+              type="text"
+              value={project_name}
+              onChange={(e) => setProjectName(e.target.value)}
+              class="form-control"
+              id="project_name"
+            />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label white">
               Link
             </label>
-            <input type="text" class="form-control" id="project_name" />
+            <input
+              type="text"
+              value={project_link}
+              onChange={(e) => setProjectLink(e.target.value)}
+              class="form-control"
+              id="project_name"
+            />
           </div>
-
           <label for="exampleInputEmail1" class="form-label white">
             Description
           </label>
@@ -324,9 +435,10 @@ function Projects() {
               class="form-control"
               placeholder="Leave a comment here"
               id="project_description"
+              value={project_description}
+              onChange={(e) => setProjectDescription(e.target.value)}
             ></textarea>
           </div>
-
           <button type="submit" class="btn btn-primary">
             Save
           </button>
