@@ -27,6 +27,10 @@ function Projects() {
   const [project_description, setProjectDescription] = useState("");
   const [profileMsg, setProfileMsg] = useState("");
   const [profileState, setProfileState] = useState(false);
+  const [links, setLinks] = useState(false);
+  const [linksMsg, setLinksMsg] = useState("");
+  const [projectState, setProjectState] = useState(false);
+  const [projectMsg, setProjectMsg] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -75,8 +79,31 @@ function Projects() {
       });
   }, []);
 
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/v1/getprojects", {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    })
+    .then((res) => {
+      const data = res.data.data;
+      if (res.data.success === true) {
+        setProjectName(data.project_name);
+        setProjectLink(data.project_link);
+        setProjectDescription(data.project_description);
+      }
+    })
+    .catch((err) => {
+      localStorage.clear();
+      navigate("/")
+    });
+  }, []);
+
+  // validations not completed
   const handleProfile = () => {
     setProfileState(true);
+    setLinksMsg("");
+    setProjectMsg("");
     axios
       .post(
         "http://localhost:8000/api/v1/setprofile",
@@ -101,7 +128,6 @@ function Projects() {
         if (response.data.status === true) {
           setProfileMsg(response.data.message);
           setProfileState(false);
-          console.log(profileMsg);
         } else setProfileMsg(response.data.message);
       })
       .catch((err) => {
@@ -110,7 +136,11 @@ function Projects() {
       });
   };
 
+  // validations not completed
   const handleProfileLinks = () => {
+    setLinks(true);
+    setProfileMsg("");
+    setProjectMsg("");
     axios
       .post(
         "http://localhost:8000/api/v1/codinglinks",
@@ -128,10 +158,40 @@ function Projects() {
           },
         }
       )
-      .then((res) => console.log(res.data.message))
+      .then((res) => {
+        if (res.data.success === true) {
+          setLinks(false);
+          setLinksMsg(res.data.message);
+        }
+      })
       .catch((err) => {
-        console.log(err);
+        localStorage.clear();
+        navigate("/");
       });
+  };
+
+  // validations not completed
+  const handleProjects = () => {
+    setProjectState(true);
+    setProfileMsg("");
+    setLinksMsg("");
+    axios
+      .post(
+        "http://localhost:8000/api/v1/addprojects",
+        { project_name, project_link, project_description },
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        if (res.data.success === true) {
+          setProjectState(false);
+          setProjectMsg(res.data.message);
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -394,12 +454,34 @@ function Projects() {
               </div>
             </div>
             <button
-              type="submit"
+              type="button"
               class="btn btn-primary"
               onClick={handleProfileLinks}
             >
-              Save
+              {links === false ? (
+                <span>Save</span>
+              ) : (
+                <span>
+                  <Oval
+                    height={20}
+                    width={20}
+                    color="white"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                    ariaLabel="oval-loading"
+                    secondaryColor="white"
+                    strokeWidth={3}
+                    strokeWidthSecondary={5}
+                  />
+                </span>
+              )}
             </button>
+            <span
+              style={{ fontSize: "12px", color: "#83d8ae", marginLeft: "15px" }}
+            >
+              {linksMsg}
+            </span>
           </div>
           {/* Project Details */}
           <div className="mb-4 mt-5 p_heading">Project Details</div>
@@ -439,9 +521,35 @@ function Projects() {
               onChange={(e) => setProjectDescription(e.target.value)}
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">
-            Save
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={handleProjects}
+          >
+            {projectState === false ? (
+              <span>Save</span>
+            ) : (
+              <span>
+                <Oval
+                  height={20}
+                  width={20}
+                  color="white"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="white"
+                  strokeWidth={3}
+                  strokeWidthSecondary={5}
+                />
+              </span>
+            )}
           </button>
+          <span
+              style={{ fontSize: "12px", color: "#83d8ae", marginLeft: "15px" }}
+            >
+              {projectMsg}
+            </span>
         </div>
       </div>
     </>
