@@ -79,26 +79,6 @@ function Projects() {
       });
   }, []);
 
-  useEffect(() => {
-    axios.get("http://localhost:8000/api/v1/getprojects", {
-      headers: {
-        Authorization: localStorage.getItem("token")
-      }
-    })
-    .then((res) => {
-      const data = res.data.data;
-      if (res.data.success === true) {
-        setProjectName(data.project_name);
-        setProjectLink(data.project_link);
-        setProjectDescription(data.project_description);
-      }
-    })
-    .catch((err) => {
-      localStorage.clear();
-      navigate("/")
-    });
-  }, []);
-
   // validations not completed
   const handleProfile = () => {
     setProfileState(true);
