@@ -1,9 +1,29 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import cv from "../assets/images/cv.png";
 import linkedin from "../assets/images/linkedin.png";
 import github from "../assets/images/github.png";
+import axios from "axios";
 
 function Resume() {
+  const [links, setLinks] = useState({});
+  const [state, setState] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/v1/codinglinksdetails", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        if (res.data.success === true) {
+          setLinks(res.data.data);
+          setState(true);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <div className="resume_container">
@@ -22,10 +42,14 @@ function Resume() {
             <div className="socials_inner_container">
               <div>
                 <span>
-                  <img src={linkedin} height="45" />
+                  <a href={links.linked_in} target="_blank">
+                    <img src={linkedin} height="45" />
+                  </a>
                 </span>
                 <span>
-                  <img src={github} className="ml-8" height="45" />
+                  <a href={links.github} target="_blank">
+                    <img src={github} className="ml-8" height="45" />
+                  </a>
                 </span>
               </div>
             </div>

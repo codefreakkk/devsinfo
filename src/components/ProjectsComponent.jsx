@@ -32,6 +32,7 @@ function ProjectsComponent() {
                   return (
                     <div class="col">
                       <ProjectContainer 
+                        key={index}
                         p_name={data.project_name}
                         p_link={data.project_link}
                         p_desc={data.project_description}

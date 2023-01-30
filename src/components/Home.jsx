@@ -12,7 +12,7 @@ import ProjectsComponent from "./ProjectsComponent";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Home() {
   const [name, setName] = useState("");
@@ -25,6 +25,7 @@ function Home() {
   const [skill2, setSkill2] = useState("");
   const [skill3, setSkill3] = useState("");
   const [skill4, setSkill4] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -46,9 +47,12 @@ function Home() {
         setSkill3(data.skill3);
         setSkill4(data.skill4);
       })
-      .catch((err) => alert("Some error occured"));
+      .catch((err) => {
+        alert("Some error occured");
+        localStorage.clear();
+        navigate("/");
+      });
   }, []);
-
 
   return (
     <>
@@ -104,7 +108,7 @@ function Home() {
             </div>
           </div>
           {/* mobile view start */}
-          <HomeProfile_mobile 
+          <HomeProfile_mobile
             name={name}
             u_email={u_email}
             u_contact={u_contact}
